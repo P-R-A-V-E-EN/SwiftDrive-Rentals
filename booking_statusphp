@@ -1,0 +1,106 @@
+ <?php
+
+session_start();
+include "config/db.php";
+
+if (!isset($_SESSION['customer_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+$customer_id = $_SESSION['customer_id'];
+
+$sql = "SELECT bookings.*,
+               vehicles.vehicle_name,
+               vehicles.brand,
+               vehicles.model
+        FROM bookings
+
+        INNER JOIN vehicles
+        ON bookings.vehicle_id = vehicles.vehicle_id
+
+        WHERE bookings.customer_id = '$customer_id'
+
+        ORDER BY bookings.booking_id DESC";
+
+$result = mysqli_query($conn, $sql);
+
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SwiftDrive - Booking Status</title>
+</head>
+
+<body>
+
+    <h1>Booking Status</h1>
+
+    <?php
+
+    if (mysqli_num_rows($result) > 0) {
+
+        while ($booking = mysqli_fetch_assoc($result)) {
+
+    ?>
+
+        <div>
+
+            <h2>
+                <?php echo $booking['vehicle_name']; ?>
+            </h2>
+
+            <p>
+                Booking ID:
+                <?php echo $booking['booking_id']; ?>
+            </p>
+
+            <p>
+                Pickup Date:
+                <?php echo $booking['pickup_date']; ?>
+            </p>
+
+            <p>
+                Return Date:
+                <?php echo $booking['return_date']; ?>
+            </p>
+
+            <p>
+                Total Amount:
+                Rs. <?php echo number_format($booking['total_amount'], 2); ?>
+            </p>
+
+            <p>
+                <strong>
+                    Status:
+                    <?php echo $booking['booking_status']; ?>
+                </strong>
+            </p>
+
+            <hr>
+
+        </div>
+
+    <?php
+
+        }
+
+    } else {
+
+        echo "<p>No bookings found.</p>";
+
+    }
+
+    ?>
+
+    <br>
+
+    <a href="dashboard.php">
+        Back to Dashboard
+    </a>
+
+</body>
+
+</html>

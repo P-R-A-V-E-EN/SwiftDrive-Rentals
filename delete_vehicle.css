@@ -1,0 +1,156 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0F172A;
+    --orange: #FF6B35;
+    --white: #FFFFFF;
+    --background: #F8FAFC;
+    --border: #E2E8F0;
+    --text: #64748B;
+    --red: #DC2626;
+    --dark-red: #B91C1C;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: #101828;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.delete-card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--white);
+    padding: 36px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.warning-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 22px;
+    background: #FEF2F2;
+    color: var(--red);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--navy);
+    font-size: 25px;
+    margin-bottom: 13px;
+}
+
+.description {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.vehicle-info {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 17px;
+    margin-bottom: 25px;
+    overflow-wrap: anywhere;
+}
+
+.vehicle-info strong {
+    display: block;
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.vehicle-info span {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.error-message {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #B91C1C;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.button {
+    flex: 1;
+    min-height: 46px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cancel-button {
+    border: 1px solid var(--border);
+    color: var(--navy);
+    background: var(--white);
+}
+
+.cancel-button:hover {
+    background: #F1F5F9;
+}
+
+.delete-button {
+    border: none;
+    background: var(--red);
+    color: var(--white);
+}
+
+.delete-button:hover {
+    background: var(--dark-red);
+}
+
+.delete-button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+    .delete-card {
+        padding: 25px 18px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}

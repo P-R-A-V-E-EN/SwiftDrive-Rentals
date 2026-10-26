@@ -1,0 +1,196 @@
+  /* Hero section */
+.about-hero {
+    padding: 38px 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.15),
+            rgba(15, 23, 42, 0.05)
+        ),
+        url("images/about-hero.png") center 55% / cover no-repeat;
+    color: #FFFFFF;
+}
+
+.about-hero h1 {
+    margin-bottom: 8px;
+    color: #FFFFFF;
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.about-hero p {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Mission and values section */
+.about-main {
+    padding: 35px 0;
+    background: #FFFFFF;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.about-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #FFF0E8;
+    color: #FF6B35;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.about-item h2 {
+    margin: 2px 0 8px;
+    color: #0F172A;
+    font-size: 19px;
+}
+
+.about-item p {
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.values-list {
+    padding-left: 18px;
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.values-list li::marker {
+    color: #FF6B35;
+}
+
+/* About image */
+.about-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #F1F5F9;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-image-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    font-size: 70px;
+    background: #F1F5F9;
+}
+
+/* Services section */
+.about-services {
+    padding: 10px 0 35px;
+    background: #FFFFFF;
+}
+
+.services-title {
+    margin-bottom: 16px;
+    color: #0F172A;
+    font-size: 22px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 115px;
+    padding: 15px 8px;
+    text-align: center;
+    border: 1px solid #E2E8F0;
+    border-radius: 7px;
+    background: #FFFFFF;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.service-card:hover {
+    border-color: #FF6B35;
+    transform: translateY(-3px);
+}
+
+.service-icon {
+    margin-bottom: 10px;
+    color: #2563EB;
+    font-size: 25px;
+}
+
+.service-card h3 {
+    color: #475569;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .about-hero {
+        padding: 32px 0;
+    }
+
+    .about-hero h1 {
+        font-size: 26px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-main {
+        padding: 28px 0;
+    }
+
+    .about-image {
+        height: 220px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .services-title {
+        font-size: 21px;
+    }
+}

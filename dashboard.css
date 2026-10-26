@@ -1,0 +1,773 @@
+ /* =========================
+   GLOBAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F8FAFC;
+    color: #101828;
+}
+a {
+    text-decoration: none;
+}
+button {
+    font: inherit;
+}
+/* =========================
+   WEBSITE HEADER
+========================= */
+.site-header {
+    background: #0F172A;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 10;
+}
+.header-container {
+    max-width: 1400px;
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+.site-logo,
+.footer-logo {
+    color: #FFFFFF;
+    font-size: 27px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.site-logo span,
+.footer-logo span {
+    color: #FF6B35;
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.main-nav a {
+    color: #FFFFFF;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+.main-nav a:hover {
+    color: #FF6B35;
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.header-login,
+.header-register {
+    display: inline-block;
+    padding: 11px 19px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.header-login {
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+.header-login:hover {
+    color: #FF6B35;
+    border-color: #FF6B35;
+}
+.header-register {
+    color: #FFFFFF;
+    background: #FF6B35;
+    border: 1px solid #FF6B35;
+}
+.header-register:hover {
+    background: #E55A2B;
+}
+.menu-toggle,
+.mobile-nav {
+    display: none;
+}
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+.dashboard-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 5% 45px;
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+/* =========================
+   SIDEBAR
+========================= */
+.dashboard-sidebar {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-radius: 12px;
+    padding: 25px 15px;
+    min-height: 490px;
+    display: flex;
+    flex-direction: column;
+}
+.customer-profile {
+    text-align: center;
+    padding: 5px 5px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.customer-avatar {
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #FF6B35;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+}
+.customer-profile h3 {
+    font-size: 16px;
+    overflow-wrap: anywhere;
+    margin-bottom: 6px;
+}
+.customer-profile p {
+    color: #CBD5E1;
+    font-size: 12px;
+}
+.sidebar-menu {
+    padding-top: 22px;
+}
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 13px 12px;
+    margin-bottom: 8px;
+    border-radius: 7px;
+    color: #CBD5E1;
+    font-size: 13px;
+    transition: background 0.3s, color 0.3s;
+}
+.sidebar-link span {
+    width: 20px;
+    text-align: center;
+    font-size: 17px;
+}
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: #FFFFFF;
+    background: #2563EB;
+}
+.sidebar-logout {
+    margin-top: auto;
+    padding-top: 35px;
+}
+.sidebar-logout .sidebar-link:hover {
+    background: #FF6B35;
+}
+/* =========================
+   DASHBOARD MAIN
+========================= */
+.dashboard-main {
+    min-width: 0;
+}
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+.eyebrow {
+    color: #64748B;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+.dashboard-heading h1 {
+    font-size: 27px;
+    color: #0F172A;
+}
+.book-car-btn {
+    display: inline-block;
+    background: #FF6B35;
+    color: #FFFFFF;
+    padding: 12px 17px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+.book-car-btn:hover {
+    background: #E55A2B;
+}
+/* =========================
+   WELCOME SECTION
+========================= */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 20px;
+    margin-bottom: 22px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+}
+.welcome-car-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFF0E9;
+    border-radius: 10px;
+    font-size: 28px;
+}
+.welcome-section h2 {
+    color: #0F172A;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+.welcome-section p {
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.7;
+}
+/* =========================
+   STATISTICS CARDS
+========================= */
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.stat-card {
+    min-width: 0;
+    padding: 19px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+}
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.stat-top > span:first-child {
+    color: #64748B;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.stat-icon {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.orange-icon {
+    color: #FF6B35;
+    background: #FFF0E9;
+}
+.blue-icon {
+    color: #2563EB;
+    background: #EAF2FF;
+}
+.green-icon {
+    color: #16804A;
+    background: #E5F8EF;
+}
+.stat-card h2 {
+    font-size: 29px;
+    margin: 14px 0 6px;
+    color: #0F172A;
+}
+.stat-card p {
+    font-size: 11px;
+    color: #94A3B8;
+}
+/* =========================
+   CONTENT CARDS
+========================= */
+.content-card {
+    padding: 22px;
+    margin-bottom: 22px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+}
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+.section-heading h2 {
+    color: #0F172A;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.section-heading p {
+    color: #64748B;
+    font-size: 12px;
+    line-height: 1.6;
+}
+.view-all {
+    color: #FF6B35;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.view-all:hover {
+    color: #E55A2B;
+}
+/* =========================
+   BOOKINGS TABLE
+========================= */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.booking-table th {
+    padding: 13px 10px;
+    background: #F8FAFC;
+    color: #64748B;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+    border-bottom: 1px solid #E2E8F0;
+}
+.booking-table td {
+    padding: 15px 10px;
+    color: #475569;
+    font-size: 12px;
+    white-space: nowrap;
+    border-bottom: 1px solid #F1F5F9;
+}
+.booking-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.car-name {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #0F172A;
+    font-weight: bold;
+}
+.car-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: #F1F5F9;
+}
+.status-badge {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.status-success {
+    color: #16804A;
+    background: #DCFCE7;
+}
+.status-pending {
+    color: #9A6700;
+    background: #FEF3C7;
+}
+.status-cancelled {
+    color: #B42318;
+    background: #FEE4E2;
+}
+.status-default {
+    color: #475569;
+    background: #E2E8F0;
+}
+/* =========================
+   EMPTY / ERROR STATES
+========================= */
+.empty-state {
+    text-align: center;
+    padding: 25px 12px;
+}
+.empty-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+.empty-state h3 {
+    font-size: 17px;
+    color: #0F172A;
+    margin-bottom: 9px;
+}
+.empty-state p {
+    max-width: 390px;
+    margin: 0 auto 18px;
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.7;
+}
+.notice-box {
+    padding: 16px;
+    border-radius: 8px;
+    color: #9A6700;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    font-size: 13px;
+    line-height: 1.7;
+}
+/* =========================
+   BOOKING PROGRESS
+========================= */
+.booking-progress {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 12px 0 5px;
+}
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 65px;
+    min-width: 55px;
+    color: #94A3B8;
+    font-size: 10px;
+    text-align: center;
+}
+.progress-dot {
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    border-radius: 50%;
+    color: #64748B;
+    font-size: 10px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+.completed-step {
+    color: #FF6B35;
+    font-weight: bold;
+}
+.completed-step .progress-dot {
+    background: #FF6B35;
+    border-color: #FF6B35;
+    color: #FFFFFF;
+}
+.progress-line {
+    flex: 1;
+    min-width: 8px;
+    height: 2px;
+    margin-top: 13px;
+    background: #CBD5E1;
+}
+/* =========================
+   WEBSITE FOOTER
+========================= */
+.site-footer {
+    background: #0F172A;
+    color: #FFFFFF;
+}
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 45px 5%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+}
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.footer-brand p,
+.footer-contact p {
+    color: #CBD5E1;
+    font-size: 13px;
+    line-height: 1.9;
+}
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+.footer-links a {
+    display: block;
+    width: fit-content;
+    color: #CBD5E1;
+    font-size: 13px;
+    margin-bottom: 11px;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: #FF6B35;
+}
+.footer-contact p {
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 18px 5%;
+    text-align: center;
+}
+.footer-bottom p {
+    color: #CBD5E1;
+    font-size: 12px;
+    line-height: 1.6;
+}
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1000px) {
+    .header-container {
+        padding: 0 3%;
+        gap: 15px;
+    }
+    .main-nav {
+        gap: 14px;
+    }
+    .main-nav a {
+        font-size: 12px;
+    }
+    .header-login,
+    .header-register {
+        padding: 10px 12px;
+    }
+    .dashboard-layout {
+        padding-left: 3%;
+        padding-right: 3%;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 18px;
+    }
+    .statistics-grid {
+        gap: 10px;
+    }
+    .stat-card {
+        padding: 14px;
+    }
+    .stat-top > span:first-child {
+        font-size: 11px;
+    }
+    .content-card {
+        padding: 17px;
+    }
+}
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+@media (max-width: 760px) {
+    .header-container {
+        min-height: 70px;
+        padding: 0 20px;
+    }
+    .site-logo {
+        font-size: 24px;
+    }
+    .main-nav,
+    .header-actions {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        background: transparent;
+        color: #FFFFFF;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 22px;
+    }
+    .mobile-nav.show {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px 18px;
+        gap: 0;
+    }
+    .mobile-nav a {
+        display: block;
+        color: #FFFFFF;
+        padding: 12px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 14px;
+    }
+    .mobile-nav a:hover {
+        color: #FF6B35;
+    }
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+        padding: 22px 18px 30px;
+        gap: 22px;
+    }
+    .dashboard-sidebar {
+        min-height: auto;
+        padding: 18px;
+    }
+    .customer-profile {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        text-align: left;
+        padding: 0 0 17px;
+    }
+    .customer-avatar {
+        width: 47px;
+        height: 47px;
+        min-width: 47px;
+        margin: 0;
+        font-size: 20px;
+    }
+    .customer-profile h3 {
+        font-size: 14px;
+    }
+    .customer-profile p {
+        font-size: 11px;
+    }
+    .sidebar-menu {
+        padding-top: 17px;
+    }
+    .sidebar-link {
+        margin-bottom: 5px;
+    }
+    .sidebar-logout {
+        padding-top: 10px;
+    }
+    .dashboard-heading h1 {
+        font-size: 24px;
+    }
+    .statistics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .stat-card {
+        padding: 13px 10px;
+    }
+    .stat-icon {
+        display: none;
+    }
+    .stat-card h2 {
+        font-size: 25px;
+    }
+    .stat-top > span:first-child {
+        font-size: 10px;
+    }
+    .stat-card p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+    .footer-container {
+        padding: 35px 22px;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 430px) {
+    .dashboard-layout {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .dashboard-heading {
+        align-items: flex-start;
+    }
+    .dashboard-heading h1 {
+        font-size: 22px;
+    }
+    .book-car-btn {
+        padding: 10px 11px;
+        font-size: 11px;
+    }
+    .welcome-section {
+        padding: 15px;
+        gap: 12px;
+    }
+    .welcome-car-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        font-size: 22px;
+    }
+    .welcome-section h2 {
+        font-size: 15px;
+    }
+    .welcome-section p {
+        font-size: 12px;
+    }
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-card {
+        padding: 16px;
+    }
+    .stat-top > span:first-child {
+        font-size: 12px;
+    }
+    .stat-icon {
+        display: flex;
+    }
+    .stat-card h2 {
+        margin: 10px 0 5px;
+    }
+    .content-card {
+        padding: 14px;
+    }
+    .section-heading h2 {
+        font-size: 16px;
+    }
+    .booking-progress {
+        overflow-x: auto;
+        min-width: 280px;
+    }
+    .progress-step {
+        min-width: 49px;
+        font-size: 9px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .footer-brand {
+        grid-column: auto;
+    }
+}

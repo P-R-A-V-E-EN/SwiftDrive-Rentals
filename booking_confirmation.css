@@ -1,0 +1,211 @@
+ :root {
+    --navy: #0F172A;
+    --orange: #FF6B35;
+    --background: #F8FAFC;
+    --text: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+}
+.confirmation-page {
+    background: var(--background);
+    padding: 45px 0 60px;
+    min-height: 65vh;
+}
+.confirmation-card {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 5px 22px rgba(15, 23, 42, 0.06);
+}
+.confirmation-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #DCFCE7;
+    color: #15803D;
+    font-size: 32px;
+    font-weight: 700;
+}
+.confirmation-card > h1 {
+    color: var(--navy);
+    font-size: 28px;
+    text-align: center;
+    margin: 0 0 12px;
+}
+.confirmation-intro {
+    color: var(--text);
+    text-align: center;
+    line-height: 1.7;
+    margin: 0 0 16px;
+}
+.status-badge {
+    display: table;
+    margin: 0 auto;
+    padding: 7px 17px;
+    border-radius: 20px;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 13px;
+    font-weight: 700;
+}
+.status-message {
+    color: var(--text);
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.7;
+    margin: 15px auto 25px;
+    max-width: 540px;
+}
+.booking-reference {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    border: 1px dashed #FDBA74;
+    border-radius: 9px;
+    background: #FFF7ED;
+    margin-bottom: 24px;
+}
+.booking-reference span {
+    color: var(--text);
+    font-size: 14px;
+}
+.booking-reference strong {
+    color: var(--navy);
+    font-size: 19px;
+}
+.confirmation-vehicle {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--border);
+}
+.confirmation-vehicle img {
+    width: 125px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 9px;
+    background: var(--background);
+}
+.confirmation-vehicle h2 {
+    color: var(--navy);
+    font-size: 19px;
+    margin: 0 0 8px;
+}
+.confirmation-vehicle p {
+    color: var(--text);
+    font-size: 13px;
+    margin: 5px 0;
+}
+.confirmation-details {
+    padding-top: 12px;
+}
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 0;
+    border-bottom: 1px solid #F1F5F9;
+    font-size: 14px;
+}
+.detail-row span {
+    color: var(--text);
+}
+.detail-row strong {
+    color: var(--navy);
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+.detail-row.total-row {
+    font-size: 17px;
+    border-bottom: none;
+    padding-top: 19px;
+}
+.confirmation-notice {
+    background: #FFF7ED;
+    border: 1px solid #FED7AA;
+    border-radius: 9px;
+    padding: 16px;
+    margin-top: 20px;
+}
+.confirmation-notice strong {
+    color: #9A3412;
+    font-size: 14px;
+}
+.confirmation-notice p {
+    color: #9A3412;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 7px 0 0;
+}
+.confirmation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+.confirm-primary,
+.confirm-secondary {
+    flex: 1;
+    min-width: 180px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+.confirm-primary {
+    background: var(--orange);
+    color: var(--white);
+}
+.confirm-primary:hover {
+    background: #E55A2B;
+}
+.confirm-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--border);
+}
+.confirm-secondary:hover {
+    background: var(--background);
+}
+@media (max-width: 600px) {
+    .confirmation-page {
+        padding: 25px 0 40px;
+    }
+    .confirmation-card {
+        padding: 22px 17px;
+    }
+    .confirmation-card > h1 {
+        font-size: 23px;
+    }
+    .confirmation-vehicle img {
+        width: 95px;
+        height: 70px;
+    }
+    .booking-reference strong {
+        font-size: 16px;
+    }
+    .detail-row {
+        font-size: 12px;
+        gap: 12px;
+    }
+    .confirmation-actions {
+        flex-direction: column;
+    }
+    .confirm-primary,
+    .confirm-secondary {
+        width: 100%;
+    }
+}

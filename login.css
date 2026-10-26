@@ -1,0 +1,523 @@
+ /* ==========================================
+   1. GLOBAL STYLES
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --navy: #0F172A;
+    --orange: #FF6B35;
+    --orange-hover: #E55A2B;
+    --white: #FFFFFF;
+    --background: #F8FAFC;
+    --text: #101828;
+    --muted: #64748B;
+    --border: #E2E8F0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+/* ==========================================
+   2. HEADER / NAVIGATION BAR
+========================================== */
+.site-header {
+    min-height: 70px;
+    padding: 14px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--navy);
+    border-bottom: 1px solid #263247;
+}
+/* SwiftDrive text logo */
+.brand {
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.brand span {
+    color: var(--orange);
+}
+/* Navigation links */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.main-nav a {
+    color: #FFFFFF;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+.main-nav a:hover {
+    color: var(--orange);
+}
+/* Login and Register buttons */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-login,
+.nav-register {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s, border-color 0.2s;
+}
+.nav-login {
+    color: var(--white);
+    border: 1px solid #FFFFFF;
+}
+.nav-login.active,
+.nav-login:hover {
+    border-color: var(--orange);
+}
+.nav-register {
+    color: var(--white);
+    background: var(--orange);
+    border: 1px solid var(--orange);
+}
+.nav-register:hover {
+    background: var(--orange-hover);
+    border-color: var(--orange-hover);
+}
+/* ==========================================
+   3. MAIN LOGIN LAYOUT
+========================================== */
+.login-layout {
+    max-width: 1400px;
+    min-height: 510px;
+    margin: 0 auto;
+    padding: 28px 6%;
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+}
+/* ==========================================
+   4. LEFT WELCOME PANEL
+========================================== */
+.welcome-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 450px;
+    padding: 35px;
+    overflow: hidden;
+    color: var(--white);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15, 23, 42, 0.15),
+            rgba(15, 23, 42, 0.05)
+        ),
+        url("images/login.png") center / cover no-repeat;
+    border-radius: 8px 0 0 8px;
+}
+.welcome-content {
+    max-width: 360px;
+    margin-top: 45px;
+}
+.welcome-label {
+    margin-bottom: 14px;
+    color: #FDBA74;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.welcome-content h1 {
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: clamp(30px, 3vw, 40px);
+    line-height: 1.2;
+}
+.welcome-description {
+    max-width: 320px;
+    color: #E2E8F0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+/* Benefits list */
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-top: 32px;
+}
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #F8FAFC;
+    font-size: 12px;
+}
+.benefit-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    font-size: 15px;
+}
+/* Bottom text on image panel */
+.welcome-bottom {
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.welcome-bottom strong,
+.welcome-bottom small {
+    display: block;
+}
+.welcome-bottom strong {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: 12px;
+}
+.welcome-bottom small {
+    color: #CBD5E1;
+    font-size: 10px;
+}
+/* ==========================================
+   5. RIGHT LOGIN PANEL
+========================================== */
+.login-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 0 8px 8px 0;
+}
+.login-card {
+    width: 100%;
+    max-width: 410px;
+}
+.form-heading {
+    margin-bottom: 28px;
+}
+.form-heading h2 {
+    margin-bottom: 10px;
+    color: var(--navy);
+    font-size: 24px;
+    line-height: 1.4;
+}
+.form-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+/* ==========================================
+   6. FORM INPUTS
+========================================== */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+}
+.form-group input {
+    width: 100%;
+    min-height: 42px;
+    padding: 12px 13px;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input::placeholder {
+    color: #94A3B8;
+}
+.form-group input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.12);
+}
+/* Password field */
+.password-wrapper {
+    position: relative;
+}
+.password-wrapper input {
+    padding-right: 58px;
+}
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 5px;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+.password-toggle:hover {
+    color: var(--orange);
+}
+/* ==========================================
+   7. REMEMBER ME AND FORGOT PASSWORD
+========================================== */
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 24px;
+}
+.remember-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #475569;
+    font-size: 11px;
+    cursor: pointer;
+}
+.remember-option input {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--orange);
+    cursor: pointer;
+}
+.forgot-link {
+    color: var(--muted);
+    font-size: 11px;
+}
+.forgot-link:hover {
+    color: var(--orange);
+}
+/* ==========================================
+   8. LOGIN BUTTON
+========================================== */
+.login-button {
+    width: 100%;
+    min-height: 43px;
+    padding: 13px;
+    color: var(--white);
+    background: var(--orange);
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.login-button:hover {
+    background: var(--orange-hover);
+    transform: translateY(-1px);
+}
+.login-button:focus-visible {
+    outline: 3px solid #FDBA74;
+    outline-offset: 3px;
+}
+/* Register link */
+.register-prompt {
+    margin-top: 24px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 11px;
+}
+.register-prompt a {
+    margin-left: 3px;
+    color: var(--orange);
+    font-weight: 700;
+}
+.register-prompt a:hover {
+    text-decoration: underline;
+}
+/* ==========================================
+   9. ERROR AND SUCCESS MESSAGES
+========================================== */
+.alert {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+.success-alert {
+    color: #166534;
+    background: #DCFCE7;
+    border: 1px solid #BBF7D0;
+}
+.error-alert {
+    color: #991B1B;
+    background: #FEE2E2;
+    border: 1px solid #FECACA;
+}
+/* ==========================================
+   10. FOOTER
+========================================== */
+.site-footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 35px 6%;
+    color: var(--white);
+    background: var(--navy);
+}
+/* Footer logo */
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 800;
+}
+.footer-logo span {
+    color: var(--orange);
+}
+.footer-brand p {
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.8;
+}
+/* Footer columns */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+.footer-column h3 {
+    margin-bottom: 4px;
+    color: var(--white);
+    font-size: 15px;
+}
+.footer-column a,
+.footer-column p {
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.6;
+}
+.footer-column a:hover {
+    color: var(--orange);
+}
+/* Copyright */
+.copyright {
+    padding: 15px 20px;
+    color: var(--white);
+    background: var(--navy);
+    border-top: 1px solid #475569;
+    text-align: center;
+    font-size: 12px;
+}
+/* ==========================================
+   11. RESPONSIVE DESIGN
+========================================== */
+@media (max-width: 1000px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+    .main-nav {
+        gap: 14px;
+    }
+    .login-layout {
+        padding: 24px 3%;
+    }
+    .welcome-panel,
+    .login-panel {
+        padding: 25px;
+    }
+    .site-footer {
+        gap: 22px;
+    }
+}
+@media (max-width: 760px) {
+    .site-header {
+        padding: 16px 5%;
+        gap: 15px;
+    }
+    .main-nav {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 8px;
+    }
+    .login-layout {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+    }
+    .welcome-panel {
+        min-height: 390px;
+        padding: 27px;
+        border-radius: 8px 8px 0 0;
+    }
+    .welcome-content {
+        margin-top: 20px;
+    }
+    .login-panel {
+        padding: 35px 25px;
+        border-radius: 0 0 8px 8px;
+    }
+    .site-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+        padding: 30px 6%;
+    }
+}
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 4%;
+    }
+    .brand {
+        font-size: 20px;
+    }
+    .nav-login,
+    .nav-register {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+    .main-nav {
+        gap: 13px;
+    }
+    .main-nav a {
+        font-size: 11px;
+    }
+    .welcome-panel {
+        min-height: 370px;
+        padding: 22px;
+    }
+    .welcome-content h1 {
+        font-size: 30px;
+    }
+    .login-panel {
+        padding: 30px 19px;
+    }
+    .form-heading h2 {
+        font-size: 22px;
+    }
+    .site-footer {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px 7%;
+    }
+}

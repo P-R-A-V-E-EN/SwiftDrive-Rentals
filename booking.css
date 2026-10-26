@@ -1,0 +1,216 @@
+ :root {
+    --navy: #0F172A;
+    --orange: #FF6B35;
+    --background: #F8FAFC;
+    --text: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+}
+.booking-page {
+    background: var(--background);
+    padding: 32px 0 55px;
+    min-height: 65vh;
+}
+.booking-title {
+    color: var(--navy);
+    font-size: 30px;
+    margin: 0 0 22px;
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+.back-link:hover {
+    color: var(--orange);
+}
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: start;
+}
+.booking-card,
+.summary-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+    padding: 22px;
+    min-width: 0;
+}
+.vehicle-mini {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+}
+.vehicle-mini img {
+    width: 105px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--background);
+}
+.vehicle-mini h2 {
+    color: var(--navy);
+    font-size: 18px;
+    margin: 0 0 6px;
+}
+.vehicle-mini p {
+    color: var(--text);
+    font-size: 13px;
+    margin: 4px 0;
+}
+.vehicle-mini .vehicle-price {
+    color: var(--navy);
+    font-weight: 700;
+}
+.section-title {
+    color: var(--navy);
+    font-size: 17px;
+    margin: 22px 0 15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 43px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--white);
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 14px;
+}
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid #FFD1BF;
+    border-color: var(--orange);
+}
+.form-group input[readonly] {
+    background: var(--background);
+}
+.booking-error {
+    padding: 12px 14px;
+    border-radius: 7px;
+    color: #991B1B;
+    background: #FEF2F2;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+.summary-card > h2 {
+    color: var(--navy);
+    font-size: 20px;
+    margin: 0 0 18px;
+}
+.summary-card .vehicle-mini {
+    margin-bottom: 14px;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+.summary-row span {
+    color: var(--text);
+}
+.summary-row strong {
+    color: var(--navy);
+    text-align: right;
+}
+.summary-row.summary-total {
+    font-size: 16px;
+    font-weight: 700;
+}
+.payment-section {
+    padding-top: 20px;
+}
+.payment-section h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin: 0 0 7px;
+}
+.payment-section p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+}
+.deposit-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--background);
+    color: var(--navy);
+    font-size: 14px;
+}
+.remaining,
+.payment-note {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+.continue-btn {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s ease;
+}
+.continue-btn:hover {
+    background: #E55A2B;
+}
+.continue-btn:focus-visible {
+    outline: 3px solid #FDBA9A;
+    outline-offset: 2px;
+}
+@media (max-width: 800px) {
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+    .booking-title {
+        font-size: 25px;
+    }
+}
+@media (max-width: 480px) {
+    .booking-card,
+    .summary-card {
+        padding: 16px;
+    }
+    .vehicle-mini {
+        gap: 10px;
+    }
+    .vehicle-mini img {
+        width: 85px;
+        height: 65px;
+    }
+    .summary-row {
+        gap: 10px;
+    }
+}

@@ -1,0 +1,486 @@
+ /* ==========================================
+   1. GLOBAL STYLES
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --navy: #0F172A;
+    --orange: #FF6B35;
+    --orange-hover: #E55A2B;
+    --white: #FFFFFF;
+    --background: #F8FAFC;
+    --text: #101828;
+    --muted: #64748B;
+    --border: #E2E8F0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--background);
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+/* ==========================================
+   2. NAVIGATION BAR
+========================================== */
+.site-header {
+    min-height: 70px;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--navy);
+    border-bottom: 1px solid #263247;
+}
+.brand {
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.brand span {
+    color: var(--orange);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.main-nav a {
+    color: #FFFFFF;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+.main-nav a:hover {
+    color: var(--orange);
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-login,
+.nav-register {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s, border-color 0.2s;
+}
+.nav-login {
+    color: var(--white);
+    border: 1px solid #FFFFFF;
+}
+.nav-login:hover {
+    border-color: var(--orange);
+}
+.nav-register {
+    color: var(--white);
+    background: var(--orange);
+    border: 1px solid var(--orange);
+}
+.nav-register.active,
+.nav-register:hover {
+    background: var(--orange-hover);
+    border-color: var(--orange-hover);
+}
+/* ==========================================
+   3. REGISTER PAGE LAYOUT
+========================================== */
+.register-layout {
+    max-width: 1400px;
+    min-height: 550px;
+    margin: 0 auto;
+    padding: 24px 6%;
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+}
+/* ==========================================
+   4. LEFT WELCOME PANEL
+========================================== */
+.welcome-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+    padding: 32px;
+    overflow: hidden;
+    color: var(--white);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15, 23, 42, 0.15),
+            rgba(15, 23, 42, 0.05)
+        ),
+        url("images/register.png") center / cover no-repeat;
+    border-radius: 8px 0 0 8px;
+}
+.welcome-content {
+    max-width: 370px;
+    margin-top: 40px;
+}
+.welcome-label {
+    margin-bottom: 13px;
+    color: #FDBA74;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.welcome-content h1 {
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: clamp(30px, 3vw, 39px);
+    line-height: 1.2;
+}
+.welcome-description {
+    max-width: 320px;
+    color: #E2E8F0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+/* Benefits */
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 30px;
+}
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #F8FAFC;
+    font-size: 12px;
+}
+.benefit-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    font-size: 15px;
+}
+/* Left panel bottom text */
+.welcome-bottom {
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.welcome-bottom strong,
+.welcome-bottom small {
+    display: block;
+}
+.welcome-bottom strong {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: 12px;
+}
+.welcome-bottom small {
+    color: #CBD5E1;
+    font-size: 10px;
+}
+/* ==========================================
+   5. RIGHT REGISTER PANEL
+========================================== */
+.register-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 35px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 0 8px 8px 0;
+}
+.register-card {
+    width: 100%;
+    max-width: 410px;
+}
+.form-heading {
+    margin-bottom: 20px;
+}
+.form-heading h2 {
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-size: 24px;
+    line-height: 1.4;
+}
+.form-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+/* ==========================================
+   6. REGISTRATION FORM
+========================================== */
+.form-group {
+    margin-bottom: 13px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 700;
+}
+.form-group input {
+    display: block;
+    width: 100%;
+    min-height: 38px;
+    padding: 10px 12px;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input::placeholder {
+    color: #94A3B8;
+}
+.form-group input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.12);
+}
+/* Password visibility */
+.password-wrapper {
+    position: relative;
+}
+.password-wrapper input {
+    padding-right: 55px;
+}
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    padding: 4px;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+.password-toggle:hover {
+    color: var(--orange);
+}
+/* ==========================================
+   7. CREATE ACCOUNT BUTTON
+========================================== */
+.register-button {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 12px;
+    margin-top: 18px;
+    color: var(--white);
+    background: var(--orange);
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.register-button:hover {
+    background: var(--orange-hover);
+    transform: translateY(-1px);
+}
+.register-button:focus-visible {
+    outline: 3px solid #FDBA74;
+    outline-offset: 3px;
+}
+/* Login prompt */
+.login-prompt {
+    margin-top: 18px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 11px;
+}
+.login-prompt a {
+    margin-left: 3px;
+    color: var(--orange);
+    font-weight: 700;
+}
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+/* ==========================================
+   8. ERROR MESSAGE
+========================================== */
+.alert {
+    padding: 11px 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+.error-alert {
+    color: #991B1B;
+    background: #FEE2E2;
+    border: 1px solid #FECACA;
+}
+/* ==========================================
+   9. FOOTER
+========================================== */
+.site-footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 35px 6%;
+    color: var(--white);
+    background: var(--navy);
+}
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 800;
+}
+.footer-logo span {
+    color: var(--orange);
+}
+.footer-brand p {
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.8;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+.footer-column h3 {
+    margin-bottom: 4px;
+    color: var(--white);
+    font-size: 15px;
+}
+.footer-column a,
+.footer-column p {
+    color: var(--white);
+    font-size: 13px;
+    line-height: 1.6;
+}
+.footer-column a:hover {
+    color: var(--orange);
+}
+/* Copyright */
+.copyright {
+    padding: 15px 20px;
+    color: var(--white);
+    background: var(--navy);
+    border-top: 1px solid #475569;
+    text-align: center;
+    font-size: 12px;
+}
+/* ==========================================
+   10. RESPONSIVE DESIGN
+========================================== */
+@media (max-width: 1000px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+    .main-nav {
+        gap: 14px;
+    }
+    .register-layout {
+        padding: 22px 3%;
+    }
+    .welcome-panel,
+    .register-panel {
+        padding: 24px;
+    }
+    .site-footer {
+        gap: 24px;
+    }
+}
+@media (max-width: 760px) {
+    .site-header {
+        padding: 16px 5%;
+        gap: 15px;
+    }
+    .main-nav {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 8px;
+    }
+    .register-layout {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+    }
+    .welcome-panel {
+        min-height: 370px;
+        padding: 27px;
+        border-radius: 8px 8px 0 0;
+    }
+    .welcome-content {
+        margin-top: 15px;
+    }
+    .register-panel {
+        padding: 30px 25px;
+        border-radius: 0 0 8px 8px;
+    }
+    .register-card {
+        max-width: 500px;
+    }
+    .site-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+        padding: 30px 6%;
+    }
+}
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 4%;
+    }
+    .brand {
+        font-size: 20px;
+    }
+    .nav-login,
+    .nav-register {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+    .main-nav {
+        gap: 13px;
+    }
+    .main-nav a {
+        font-size: 11px;
+    }
+    .welcome-panel {
+        min-height: 350px;
+        padding: 22px;
+    }
+    .welcome-content h1 {
+        font-size: 30px;
+    }
+    .register-panel {
+        padding: 27px 18px;
+    }
+    .form-heading h2 {
+        font-size: 22px;
+    }
+    .site-footer {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px 7%;
+    }
+}

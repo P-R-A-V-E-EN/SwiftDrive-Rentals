@@ -1,0 +1,340 @@
+ /* ===================================
+   SwiftDrive Rentals - Payment Page
+=================================== */
+:root {
+    --navy: #0F172A;
+    --orange: #FF6B35;
+    --background: #F8FAFC;
+    --text: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--navy);
+}
+/* Main page */
+.payment-page {
+    background: var(--background);
+    padding: 28px 0 45px;
+    min-height: 65vh;
+}
+.payment-title {
+    color: var(--navy);
+    font-size: 30px;
+    margin: 0 0 22px;
+    font-weight: 700;
+}
+/* Two-column layout */
+.payment-layout {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 22px;
+    align-items: start;
+}
+.payment-sidebar {
+    display: grid;
+    gap: 18px;
+    min-width: 0;
+}
+/* Cards */
+.payment-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    min-width: 0;
+}
+.payment-card h2 {
+    color: var(--navy);
+    font-size: 19px;
+    margin: 0 0 18px;
+    font-weight: 700;
+}
+/* Vehicle summary */
+.vehicle-summary {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+.vehicle-summary img {
+    width: 90px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--background);
+    flex-shrink: 0;
+}
+.vehicle-summary h3 {
+    color: var(--navy);
+    font-size: 15px;
+    margin: 0 0 7px;
+}
+.vehicle-summary p {
+    color: var(--text);
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.5;
+}
+/* Summary rows */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #F1F5F9;
+    font-size: 12px;
+}
+.summary-row span {
+    color: var(--text);
+}
+.summary-row strong {
+    color: var(--navy);
+    text-align: right;
+    font-weight: 600;
+}
+.summary-row.summary-total {
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: none;
+    padding-top: 14px;
+}
+/* Pay Now card */
+.pay-summary {
+    border-bottom: 3px solid var(--orange);
+}
+.payment-progress {
+    height: 4px;
+    width: 100%;
+    background: #FCE1D7;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.payment-progress span {
+    display: block;
+    height: 100%;
+    width: 65%;
+    background: var(--orange);
+}
+.small-note {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 12px 0 0;
+}
+/* Payment methods */
+.payment-method-card {
+    padding: 23px;
+}
+.method-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #F1F5F9;
+    cursor: pointer;
+}
+.method-option > input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: var(--orange);
+    cursor: pointer;
+}
+.method-content {
+    flex: 1;
+    min-width: 0;
+}
+.method-content strong {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+}
+.method-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+/* Card brand icons */
+.card-brands {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.visa {
+    background: #1D4ED8;
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    font-style: italic;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+.mastercard {
+    display: flex;
+    align-items: center;
+}
+.mastercard i {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #EB001B;
+}
+.mastercard i + i {
+    background: #F79E1B;
+    margin-left: -6px;
+    opacity: 0.95;
+}
+/* Card input fields */
+.card-fields {
+    padding: 12px 0 16px 26px;
+    border-bottom: 1px solid #F1F5F9;
+}
+.form-group {
+    margin-bottom: 13px;
+}
+.form-group label {
+    display: block;
+    color: var(--text);
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+.form-group input {
+    display: block;
+    width: 100%;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 10px 12px;
+    color: var(--navy);
+    background: var(--white);
+    font-family: inherit;
+    font-size: 13px;
+}
+.form-group input::placeholder {
+    color: #94A3B8;
+}
+.form-group input:focus {
+    outline: 2px solid #FFD1BF;
+    border-color: var(--orange);
+}
+.card-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+/* Bank transfer and cash information */
+.method-info {
+    padding: 12px 14px;
+    margin: 10px 0;
+    border-radius: 7px;
+    background: var(--background);
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.6;
+}
+[hidden] {
+    display: none !important;
+}
+/* Pay Now button */
+.pay-button {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    background: var(--orange);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.pay-button:hover {
+    background: #E55A2B;
+}
+.pay-button:focus-visible {
+    outline: 3px solid #FDBA9A;
+    outline-offset: 2px;
+}
+.security-note {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 12px 0 0;
+}
+/* Alerts */
+.payment-alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.payment-alert.error {
+    color: #991B1B;
+    background: #FEF2F2;
+}
+.payment-alert.notice {
+    color: #9A3412;
+    background: #FFF7ED;
+    border: 1px solid #FED7AA;
+}
+.payment-alert p {
+    margin: 12px 0;
+}
+.dashboard-button {
+    display: inline-block;
+    padding: 11px 18px;
+    border-radius: 7px;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* Responsive layout */
+@media (max-width: 800px) {
+    .payment-layout {
+        grid-template-columns: 1fr;
+    }
+    .payment-title {
+        font-size: 25px;
+    }
+}
+@media (max-width: 480px) {
+    .payment-card,
+    .payment-method-card {
+        padding: 16px;
+    }
+    .vehicle-summary img {
+        width: 78px;
+        height: 58px;
+    }
+    .card-fields {
+        padding-left: 0;
+    }
+    .card-field-row {
+        gap: 9px;
+    }
+    .summary-row {
+        font-size: 12px;
+        gap: 10px;
+    }
+}
